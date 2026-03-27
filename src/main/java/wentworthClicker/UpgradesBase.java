@@ -4,7 +4,7 @@ public abstract class UpgradesBase {
 	
 	public final double COST;
 	public final double MULTIPLIER;
-	public final boolean OWNED;
+	public boolean OWNED;
 	public final String UPGRADE_NAME;
 	
 	public UpgradesBase() {
@@ -26,5 +26,20 @@ public abstract class UpgradesBase {
 	abstract boolean returnOwned();
 	
 	abstract String returnName();
+	
+	public void purchaseUpgrade(double pointsOwned) {
+		if (canPurchase(pointsOwned)) {
+			OWNED = true;
+		}
+	}
+	
+	public boolean canPurchase(double pointsOwned) {
+		
+		if (pointsOwned < COST || OWNED == true) {
+			return false;
+		}
+		return true;
+		
+	}
 	
 }
