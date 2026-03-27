@@ -7,11 +7,11 @@ public abstract class UpgradesBase {
 	public boolean OWNED;
 	public final String UPGRADE_NAME;
 	
-	public UpgradesBase() {
+	protected UpgradesBase() {
 		this(1.0, 1.0, "Upgrade", false);
 	}
 	
-	public UpgradesBase(double multiplier, double cost, String upgradeName, boolean owned) {
+	protected UpgradesBase(double multiplier, double cost, String upgradeName, boolean owned) {
 		MULTIPLIER = multiplier;
 		COST = cost;
 		OWNED = owned;
@@ -19,14 +19,23 @@ public abstract class UpgradesBase {
 		
 	}
 	
-	abstract double returnCost();
+	public double returnCost() {
+		return COST;
+	}
+
+	public boolean returnOwned() {
+		return OWNED;
+	}
 	
-	abstract double returnMultiplier();
-	
-	abstract boolean returnOwned();
-	
-	abstract String returnName();
-	
+	public String returnName() {
+		// TODO Auto-generated method stub
+		return UPGRADE_NAME;
+	}
+
+	public double returnMultiplier() {
+		// TODO Auto-generated method stub
+		return MULTIPLIER;
+	}
 	public void purchaseUpgrade(double pointsOwned) {
 		if (canPurchase(pointsOwned)) {
 			OWNED = true;
