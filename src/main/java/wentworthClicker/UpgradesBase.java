@@ -2,10 +2,10 @@ package wentworthClicker;
 
 public abstract class UpgradesBase {
 	
-	public final double COST;
-	public final double MULTIPLIER;
-	public boolean OWNED;
-	public final String UPGRADE_NAME;
+	private final double COST;
+	private final double MULTIPLIER;
+	private boolean OWNED;
+	private final String UPGRADE_NAME;
 	
 	protected UpgradesBase() {
 		this(1.0, 1.0, "Upgrade", false);
@@ -19,21 +19,19 @@ public abstract class UpgradesBase {
 		
 	}
 	
-	public double returnCost() {
+	public double getCost() {
 		return COST;
 	}
 
-	public boolean returnOwned() {
+	public boolean isOwned() {
 		return OWNED;
 	}
 	
-	public String returnName() {
-		// TODO Auto-generated method stub
+	public String getName() {
 		return UPGRADE_NAME;
 	}
 
-	public double returnMultiplier() {
-		// TODO Auto-generated method stub
+	public double getMultiplier() {
 		return MULTIPLIER;
 	}
 	public void purchaseUpgrade(double pointsOwned) {
