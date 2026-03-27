@@ -23,6 +23,8 @@ public abstract class UpgradesBase {
 	
 	abstract double returnMultiplier();
 	
-	abstract double returnOwned();
+	abstract boolean returnOwned();
+	
+	abstract String returnName();
 	
 }
