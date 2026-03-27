@@ -16,7 +16,6 @@ public abstract class UpgradesBase {
 		COST = cost;
 		OWNED = owned;
 		UPGRADE_NAME = upgradeName;
-		
 	}
 	
 	public double getCost() {
